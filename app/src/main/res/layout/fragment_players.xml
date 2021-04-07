@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".gameSettings.Fragment_Players">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/nombre"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:hint="Nombre del jugador"
+            android:layout_toLeftOf="@+id/añadir"
+            />
+
+        <Button
+            android:id="@+id/añadir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:text="AÑADIR"
+            android:layout_alignParentRight="true"
+             />
+
+        <ListView
+            android:id="@+id/players_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/nombre"
+            android:layout_marginLeft="5dp"
+            android:layout_above="@+id/continue_button"
+            android:layout_marginBottom="5dp"/>
+
+        <Button
+            android:id="@+id/continue_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:text="continuar"
+            android:enabled="false"
+            />
+
+
+    </RelativeLayout>
+
+
+</FrameLayout>
