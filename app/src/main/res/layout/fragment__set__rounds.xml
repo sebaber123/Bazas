@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".gameSettings.Fragment_Set_Rounds">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/table_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/round_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="ronda"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/divider1"
+                android:layout_width="1dp"
+                android:layout_marginLeft="80dp"
+                android:layout_height="50dp"
+                android:background="@android:color/holo_blue_light" />
+
+            <TextView
+                android:id="@+id/quantity_of_cards"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="cartas"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="90dp"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="1dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="180dp"
+                android:layout_height="50dp"
+                android:background="@android:color/holo_blue_light" />
+
+            <TextView
+                android:id="@+id/text_visibility"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="muestra"
+                android:layout_toRightOf="@id/divider2"
+                android:layout_marginLeft="-170dp"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold" />
+
+
+            <View
+                android:layout_width="1dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="80dp"
+                android:layout_height="50dp"
+                android:background="@android:color/holo_blue_light" />
+
+
+            <TextView
+                android:id="@+id/text_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="borrar"
+                android:layout_toRightOf="@id/divider2"
+                android:layout_marginLeft="-70dp"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+
+        <ListView
+            android:id="@+id/rounds_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/table_top"
+            android:layout_above="@id/linearLayout_set_rounds_buttons"/>
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout_set_rounds_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_above="@+id/linearLayout1"
+            android:padding="6dp"
+            android:weightSum="3">
+
+            <Button
+                android:id="@+id/button_delete_all"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:textSize="14dp"
+                android:text="Borrar todo"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1"
+                />
+            <Button
+                android:id="@+id/button_generate_rounds"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:textSize="14dp"
+                android:text="Generar Rondas"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1"
+                />
+
+            <Button
+                android:id="@+id/button_add_round"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:textSize="14dp"
+                android:text="Agregar ronda"
+                android:layout_marginLeft="2dp"
+                android:layout_weight="1"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_alignParentBottom="true"
+            android:padding="6dp"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/back_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="volver"
+                android:layout_marginRight="2dp"
+                android:backgroundTint="@color/red"
+                android:layout_weight="1"
+                />
+            <Button
+                android:id="@+id/continue_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="continuar"
+                android:layout_marginLeft="2dp"
+                android:layout_weight="1"
+                android:enabled="false"
+                />
+
+        </LinearLayout>
+
+
+
+
+
+
+    </RelativeLayout>
+
+</FrameLayout>

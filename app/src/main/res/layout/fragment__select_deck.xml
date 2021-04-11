@@ -34,6 +34,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:text="volver"
+                android:backgroundTint="@color/red"
                 android:layout_marginRight="2dp"
                 android:layout_weight="1"
                 />

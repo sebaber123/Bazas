@@ -54,14 +54,22 @@ public class Activity_GameSettings extends AppCompatActivity {
 
     public void continueButton(Integer number) {
         TextView settings = findViewById(android.R.id.content).getRootView().findViewById(R.id.settings);
+        Fragment fragment = null;
         switch (number){
             case 1:
-                getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.home_fragment, new Fragment_Select_deck(),null)
-                        .commit();
+                fragment = new Fragment_Select_deck();
+
                 settings.setText("Seleccione el mazo de cartas");
+                break;
+            case 2:
+                fragment = new Fragment_Set_Rounds();
+                settings.setText("Agregue la cantidad de cartas por ronda");
+                break;
         }
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.home_fragment, fragment,null)
+                .commit();
     }
 
     @Override public void onBackPressed() {

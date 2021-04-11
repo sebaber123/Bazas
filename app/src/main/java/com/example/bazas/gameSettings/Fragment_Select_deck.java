@@ -83,11 +83,18 @@ public class Fragment_Select_deck extends Fragment implements FragmentWithBackPr
             }
         });
 
-        Button button = view.findViewById(R.id.continue_button);
+        Button continueButton = view.findViewById(R.id.continue_button);
+        continueButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((Activity_GameSettings)getActivity()).continueButton(2);
+            }
+        });
+
         if (((Activity_GameSettings)getActivity()).getTheGame().getDeck()!=0){
-            button.setEnabled(true);
+            continueButton.setEnabled(true);
         }else{
-            button.setEnabled(false);
+            continueButton.setEnabled(false);
         }
 
         return view;

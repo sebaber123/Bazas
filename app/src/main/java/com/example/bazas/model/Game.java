@@ -55,4 +55,8 @@ public class Game {
     public void deletePlayer(Player player) {
         players.remove(player);
     }
+
+    public int getMaxQuantityOfCardPerRound() {
+        return (( this.getDeck() - 1 )/ players.size());
+    }
 }
