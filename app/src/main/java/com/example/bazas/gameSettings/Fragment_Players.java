@@ -88,7 +88,7 @@ public class Fragment_Players extends Fragment implements FragmentWithBackPress 
                 if (!name.equals("")){
                     ((Activity_GameSettings)getActivity()).addPlayer(name);
                     editText.setText("");
-                    Toast toast = Toast.makeText(getActivity().getApplicationContext(), "Jugador agregado con exito", Toast.LENGTH_LONG);
+                    Toast toast = Toast.makeText(getActivity().getApplicationContext(), "Jugador agregado con exito", Toast.LENGTH_SHORT);
                     checkContinueButton();
                     toast.show();
                 } else {

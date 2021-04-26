@@ -1,6 +1,8 @@
 package com.example.bazas.model;
 
-public class PlayerRound {
+import java.io.Serializable;
+
+public class PlayerRound implements Serializable {
     private int bet;
     private int done;
 

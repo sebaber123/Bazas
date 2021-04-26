@@ -3,7 +3,9 @@ package com.example.bazas.gameSettings;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -11,6 +13,7 @@ import android.widget.TextView;
 import com.example.bazas.R;
 import com.example.bazas.model.Game;
 import com.example.bazas.model.Player;
+import com.example.bazas.model.Round;
 
 import org.w3c.dom.Text;
 
@@ -55,7 +58,7 @@ public class Activity_GameSettings extends AppCompatActivity {
     public void continueButton(Integer number) {
         TextView settings = findViewById(android.R.id.content).getRootView().findViewById(R.id.settings);
         Fragment fragment = null;
-        switch (number){
+        switch (number) {
             case 1:
                 fragment = new Fragment_Select_deck();
 
@@ -65,11 +68,19 @@ public class Activity_GameSettings extends AppCompatActivity {
                 fragment = new Fragment_Set_Rounds();
                 settings.setText("Agregue la cantidad de cartas por ronda");
                 break;
+            case 3:
+                Intent intent = new Intent();
+                intent.putExtra("theGame", theGame);
+                setResult(2, intent);
+                finish();
+                break;
         }
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.home_fragment, fragment,null)
-                .commit();
+        if (number != 3) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.home_fragment, fragment, null)
+                    .commit();
+        }
     }
 
     @Override public void onBackPressed() {
@@ -90,7 +101,22 @@ public class Activity_GameSettings extends AppCompatActivity {
                         .commit();
                 settings.setText("Agregue los jugadores en el orden que quiera jugar");
                 break;
+            case 3:
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.home_fragment, new Fragment_Select_deck(),null)
+                        .commit();
+                settings.setText("Seleccione el mazo de cartas");
+                break;
         }
+    }
+
+    public void deleteRound(Round round) {
+        theGame.deleteRound(round);
+    }
+
+    public void deleteAllRounds() {
+        theGame.deleteAllRounds();
     }
 }
 

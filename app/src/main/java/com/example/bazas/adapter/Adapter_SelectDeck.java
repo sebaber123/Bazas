@@ -83,6 +83,7 @@ public class Adapter_SelectDeck extends BaseAdapter implements ListAdapter {
         selectButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 context.getTheGame().setDeck(list.get(position));
+                context.getTheGame().deleteAllRounds();
                 context.checkContinueButton();
                 notifyDataSetChanged();
             }

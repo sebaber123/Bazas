@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".game.Fragment_Round"
+    android:background="@color/green_400">
+
+    <TextView
+        android:id="@+id/card_to_deal"
+        android:text="Cantidad de cartas a repartir: "
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/quantity_of_cards"
+        android:text="99"
+        android:textColor="@color/black"
+        android:layout_width="275dp"
+        android:layout_height="360dp"
+        android:textSize="150dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:layout_below="@id/card_to_deal"
+        android:background="@drawable/rounded_corners_card_number"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/dealer_text"
+        android:text="Repartidor:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="-20dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_below="@+id/quantity_of_cards"
+        android:layout_alignLeft="@id/quantity_of_cards"/>
+
+    <View
+        android:id="@+id/line1"
+        android:layout_width="180dp"
+        android:layout_height="1dp"
+        android:layout_marginLeft="5dp"
+        android:background="@android:color/black"
+        android:layout_alignBottom="@id/dealer_text"
+        android:layout_toRightOf="@id/dealer_text"
+        />
+
+    <TextView
+        android:id="@+id/dealer_text_line"
+        android:text="PlayerName"
+        android:textColor="@color/black"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:textSize="25dp"
+        android:layout_marginTop="15dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_below="@+id/quantity_of_cards"
+        android:layout_toRightOf="@id/dealer_text"/>
+
+    <TextView
+        android:id="@+id/visibility_text"
+        android:text="Con muestra:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="-20dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_below="@+id/dealer_text"
+        android:layout_alignLeft="@id/quantity_of_cards"/>
+
+    <View
+        android:id="@+id/line2"
+        android:layout_width="150dp"
+        android:layout_height="1dp"
+        android:layout_marginLeft="5dp"
+        android:background="@android:color/black"
+        android:layout_alignBottom="@id/visibility_text"
+        android:layout_alignRight="@id/dealer_text_line"
+        />
+
+    <TextView
+        android:id="@+id/visibility_text_line"
+        android:text="Yes/No"
+        android:textColor="@color/black"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:textSize="25dp"
+        android:layout_marginTop="15dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_below="@+id/dealer_text"
+        android:layout_alignRight="@id/dealer_text_line"/>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_above="@id/continue_button"
+        android:padding="6dp"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/add_bets_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="Cargar&#10;Apuestas"
+            android:layout_marginRight="2dp"
+            android:layout_weight="1"
+            />
+        <Button
+            android:id="@+id/add_dones_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="Cargar&#10;Resultados"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="1"
+            android:enabled="false"
+            />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/continue_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="continuar"
+        android:gravity="center"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_alignParentBottom="true"
+        />
+
+
+</RelativeLayout>

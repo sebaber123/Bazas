@@ -1,6 +1,8 @@
 package com.example.bazas.model;
 
-public class Round {
+import java.io.Serializable;
+
+public class Round implements Serializable {
     private int quantity_of_cards;
     private boolean visibility;
 

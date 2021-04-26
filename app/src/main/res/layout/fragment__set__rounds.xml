@@ -18,8 +18,8 @@
                 android:id="@+id/round_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:text="ronda"
+                android:textSize="18dp"
+                android:text="Ronda"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
                 android:textStyle="bold" />
@@ -28,15 +28,15 @@
                 android:id="@+id/divider1"
                 android:layout_width="1dp"
                 android:layout_marginLeft="80dp"
-                android:layout_height="50dp"
+                android:layout_height="46dp"
                 android:background="@android:color/holo_blue_light" />
 
             <TextView
                 android:id="@+id/quantity_of_cards"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:text="cartas"
+                android:textSize="18dp"
+                android:text="Cartas"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="90dp"
                 android:textStyle="bold" />
@@ -45,40 +45,68 @@
                 android:id="@+id/divider2"
                 android:layout_width="1dp"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="180dp"
-                android:layout_height="50dp"
+                android:layout_marginRight="210dp"
+                android:layout_height="46dp"
                 android:background="@android:color/holo_blue_light" />
 
             <TextView
                 android:id="@+id/text_visibility"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:text="muestra"
-                android:layout_toRightOf="@id/divider2"
-                android:layout_marginLeft="-170dp"
+                android:textSize="18dp"
+                android:text="Muestra"
+                android:layout_toLeftOf="@id/divider3"
+                android:layout_marginRight="1dp"
                 android:layout_marginTop="10dp"
                 android:textStyle="bold" />
 
 
             <View
+                android:id="@+id/divider3"
                 android:layout_width="1dp"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="80dp"
-                android:layout_height="50dp"
+                android:layout_marginRight="140dp"
+                android:layout_height="46dp"
                 android:background="@android:color/holo_blue_light" />
 
+
+            <TextView
+                android:id="@+id/text_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:text="Editar"
+                android:layout_toRightOf="@id/divider2"
+                android:layout_marginLeft="-130dp"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/divider4"
+                android:layout_width="1dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="70dp"
+                android:layout_height="46dp"
+                android:background="@android:color/holo_blue_light" />
 
             <TextView
                 android:id="@+id/text_delete"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:text="borrar"
+                android:textSize="18dp"
+                android:text="Borrar"
                 android:layout_toRightOf="@id/divider2"
-                android:layout_marginLeft="-70dp"
+                android:layout_marginLeft="-60dp"
                 android:layout_marginTop="10dp"
                 android:textStyle="bold" />
+
+            <View
+                android:id="@+id/dividerbottom"
+                android:layout_height="1dp"
+                android:layout_width="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="46dp"
+                android:background="@android:color/darker_gray" />
 
 
         </RelativeLayout>

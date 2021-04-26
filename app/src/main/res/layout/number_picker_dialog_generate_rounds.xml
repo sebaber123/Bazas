@@ -7,12 +7,12 @@
         android:id="@+id/text_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Seleccione la cantidad de cartas que quiere agregar"
+        android:text="Seleccione la cantidad de Rondas que quiere agregar"
+        android:padding="10dp"
         android:textSize="20dp"
         android:textColor="@color/black"
         android:gravity="center"
         android:background="@color/teal_200"
-        android:padding="10dp"
         />
 
     <NumberPicker
@@ -24,7 +24,7 @@
         android:layout_marginTop="64dp" />
 
     <Button
-        android:id="@+id/button_add_round"
+        android:id="@+id/button_add_rounds"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_below="@+id/numberPicker"
@@ -32,7 +32,7 @@
         android:layout_toRightOf="@+id/numberPicker"
         android:layout_marginLeft="-10dp"
         android:width="145dp"
-        android:text="Agregar ronda"
+        android:text="Agregar rondas"
         android:textSize="12dp" />
 
 
@@ -44,8 +44,8 @@
         android:layout_height="50dp"
         android:layout_below="@+id/numberPicker"
         android:layout_marginTop="20dp"
-        android:layout_marginRight="-10dp"
         android:width="145dp"
+        android:layout_marginRight="-10dp"
         android:layout_toLeftOf="@+id/numberPicker"
         android:text="Cancelar" />
 

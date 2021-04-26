@@ -1,13 +1,17 @@
 package com.example.bazas.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
-public class Game {
+public class Game implements Serializable {
     private int quantity_of_rounds;
-    private int actual_round;
+    private int actual_round = 0;
     private int deck = 0;//0 no seleccionado aun, 40 baraja española sin 8 y 9 , 48 baraja española con 8 y 9, 52 mazo de poker
     private ArrayList<Player> players = new ArrayList<Player>();
     private ArrayList<Round> rounds = new ArrayList<Round>();
+    private Date startDate = Calendar.getInstance().getTime();
 
 
     public int getQuantity_of_rounds() {
@@ -58,5 +62,17 @@ public class Game {
 
     public int getMaxQuantityOfCardPerRound() {
         return (( this.getDeck() - 1 )/ players.size());
+    }
+
+    public void deleteRound(Round round) {
+        rounds.remove(round);
+    }
+
+    public void deleteAllRounds() {
+        rounds.clear();
+    }
+
+    public int positionOfFirstPlayerOfTheRound() {
+        return Math.abs((getActual_round())%(getPlayers().size()));
     }
 }

@@ -1,8 +1,9 @@
 package com.example.bazas.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Player {
+public class Player implements Serializable {
     private String name;
     private int total_points;
     private ArrayList<PlayerRound> playerRounds = new ArrayList<PlayerRound>();
