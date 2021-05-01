@@ -1,4 +1,4 @@
-package com.example.bazas.adapter;
+package com.example.bazas.gameSettings.Adapters;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;

@@ -1,4 +1,4 @@
-package com.example.bazas.adapter;
+package com.example.bazas.gameSettings.Adapters;
 
 import android.app.AlertDialog;
 import android.content.Context;

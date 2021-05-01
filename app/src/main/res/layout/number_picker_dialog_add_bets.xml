@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="Ingrese la apuesta de X"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:background="@color/teal_200"
+        android:padding="10dp"
+        />
+
+    <NumberPicker
+        android:id="@+id/numberPicker"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="64dp" />
+
+    <Button
+        android:id="@+id/button_next_bet"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/numberPicker"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@+id/numberPicker"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="10dp"
+        android:width="110dp"
+        android:text="Siguiente"
+        android:textSize="12dp" />
+
+
+    <Button
+        android:id="@+id/button_edit_bet"
+        android:textSize="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/numberPicker"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/button_cancel"
+        android:layout_marginLeft="-15dp"
+        android:width="110dp"
+        android:text="Editar" />
+
+
+
+    <Button
+        android:id="@+id/button_cancel"
+        android:textSize="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/numberPicker"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginLeft="10dp"
+        android:width="110dp"
+        android:layout_toLeftOf="@+id/numberPicker"
+        android:text="Cancelar" />
+
+</RelativeLayout>

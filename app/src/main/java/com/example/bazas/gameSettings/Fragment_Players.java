@@ -13,7 +13,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.bazas.R;
-import com.example.bazas.adapter.Adapter_AddPlayers;
+import com.example.bazas.gameSettings.Adapters.Adapter_AddPlayers;
 import com.example.bazas.model.Player;
 
 import java.util.ArrayList;
@@ -84,8 +84,9 @@ public class Fragment_Players extends Fragment implements FragmentWithBackPress 
             @Override
             public void onClick(View v) {
                 EditText editText = (EditText)view.findViewById(R.id.nombre);
-                String name = editText.getText().toString();
+                String name = editText.getText().toString().toLowerCase();
                 if (!name.equals("")){
+                    ((Activity_GameSettings)getActivity()).getTheGame().deleteAllRounds();
                     ((Activity_GameSettings)getActivity()).addPlayer(name);
                     editText.setText("");
                     Toast toast = Toast.makeText(getActivity().getApplicationContext(), "Jugador agregado con exito", Toast.LENGTH_SHORT);

@@ -40,7 +40,9 @@ public class MainActivity extends AppCompatActivity {
         if(requestCode==2)
         {
             Game theGame = (Game)data.getSerializableExtra("theGame");
-            theGame.getRounds();
+
+            theGame.StartGame();
+
             SharedPreferences sharedpreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
             Gson gson = new Gson();
             String json = gson.toJson(theGame);

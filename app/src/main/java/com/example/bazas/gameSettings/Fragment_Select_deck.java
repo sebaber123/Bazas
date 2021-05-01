@@ -8,13 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.example.bazas.R;
-import com.example.bazas.adapter.Adapter_AddPlayers;
-import com.example.bazas.adapter.Adapter_SelectDeck;
+import com.example.bazas.gameSettings.Adapters.Adapter_SelectDeck;
 import com.example.bazas.model.Game;
 
 /**

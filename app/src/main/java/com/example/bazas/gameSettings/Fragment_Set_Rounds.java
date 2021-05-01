@@ -1,6 +1,5 @@
 package com.example.bazas.gameSettings;
 
-import android.app.AlertDialog;
 import android.app.Dialog;
 import android.os.Bundle;
 
@@ -10,17 +9,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.NumberPicker;
 import android.widget.Toast;
 
 import com.example.bazas.R;
-import com.example.bazas.adapter.Adapter_AddPlayers;
-import com.example.bazas.adapter.Adapter_SelectDeck;
-import com.example.bazas.adapter.Adapter_SetRounds;
-import com.example.bazas.model.Game;
+import com.example.bazas.gameSettings.Adapters.Adapter_SetRounds;
 import com.example.bazas.model.Round;
 
 import java.util.Random;

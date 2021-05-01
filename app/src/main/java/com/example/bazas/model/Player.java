@@ -39,4 +39,24 @@ public class Player implements Serializable {
     public void addPlayerRound(PlayerRound playerRound){
         playerRounds.add(playerRound);
     }
+
+    public void setPlayerRounds(int size) {
+        for (int i = 0; i < size; i++) {
+            addPlayerRound(new PlayerRound());
+        }
+    }
+
+    public boolean canBetZero(int actual_round, int quantityOfLimitZeroBets) {
+        boolean booleanToReturn = false;
+
+        for (int i = actual_round-quantityOfLimitZeroBets; i < actual_round; i++) {
+            if (getPlayerRounds().get(i).getBet() != 0){
+                booleanToReturn = true;
+            }
+        }
+
+
+        return booleanToReturn;
+
+    }
 }
