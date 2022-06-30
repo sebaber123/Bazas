@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.example.bazas.FragmentWithBackPress;
 import com.example.bazas.R;
 import com.example.bazas.game.adapters.Adapter_Add_Bets;
 import com.example.bazas.gameSettings.Activity_GameSettings;
@@ -24,7 +25,7 @@ import java.util.stream.Collectors;
  * Use the {@link Fragment_Add_Bets#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Fragment_Add_Bets extends Fragment {
+public class Fragment_Add_Bets extends Fragment implements FragmentWithBackPress {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -97,8 +98,12 @@ public class Fragment_Add_Bets extends Fragment {
         else{
 
             finishBets.setEnabled(false);
-
         }
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        ((Activity_Game)getActivity()).backButton("no round");
     }
 }

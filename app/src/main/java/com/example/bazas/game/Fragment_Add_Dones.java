@@ -1,21 +1,29 @@
 package com.example.bazas.game;
 
+import android.os.Build;
 import android.os.Bundle;
 
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ListView;
+import android.widget.Toast;
 
+import com.example.bazas.FragmentWithBackPress;
 import com.example.bazas.R;
+import com.example.bazas.game.adapters.Adapter_Add_Bets;
+import com.example.bazas.game.adapters.Adapter_Add_Dones;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link Fragment_Add_Dones#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Fragment_Add_Dones extends Fragment {
+public class Fragment_Add_Dones extends Fragment implements FragmentWithBackPress {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -57,10 +65,57 @@ public class Fragment_Add_Dones extends Fragment {
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment__add__dones, container, false);
+        View view = inflater.inflate(R.layout.fragment__add__dones, container, false);
+
+        ListView listview = (ListView) view.findViewById(R.id.players_list);
+        listview.setAdapter(new Adapter_Add_Dones(this, ((Activity_Game)getActivity()).getTheGame().getPlayers()));
+
+
+        Button finishDones = view.findViewById(R.id.continue_button);
+
+        if(((Activity_Game)getActivity()).getTheGame().allDonesLoaded()){
+
+            finishDones.setEnabled(true);
+        }
+        else{
+
+            finishDones.setEnabled(false);
+        }
+
+        finishDones.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v) {
+                ((Activity_Game)getActivity()).continueButton("round");
+            }
+        });
+
+
+        return view;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public void checkContinueButton() {
+        Button finishDones = getView().findViewById(R.id.continue_button);
+
+        if(((Activity_Game)getActivity()).getTheGame().allDonesLoaded()){
+
+            finishDones.setEnabled(true);
+        }
+        else{
+
+            finishDones.setEnabled(false);
+        }
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        ((Activity_Game)getActivity()).backButton("no round");
     }
 }

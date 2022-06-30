@@ -37,24 +37,28 @@ public class MainActivity extends AppCompatActivity {
     {
         super.onActivityResult(requestCode, resultCode, data);
         // check if the request code is same as what is passed  here it is 2
-        if(requestCode==2)
-        {
-            Game theGame = (Game)data.getSerializableExtra("theGame");
+        if(requestCode==2) {
 
-            theGame.StartGame();
+            switch (resultCode) {
+                case 2:
+                    Game theGame = (Game) data.getSerializableExtra("theGame");
 
-            SharedPreferences sharedpreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-            Gson gson = new Gson();
-            String json = gson.toJson(theGame);
-            Set<String> games = new HashSet<String>(sharedpreferences.getStringSet("games", new HashSet<String>()));
-            games.add(json);
-            sharedpreferences.edit().putStringSet("games", games).apply();
-            //Game theFirstGame = gson.fromJson(games.iterator().next(), Game.class);
-            //theFirstGame.getRounds();
+                    theGame.StartGame();
 
-            Intent intent = new Intent(this, Activity_Game.class);
-            intent.putExtra("theGame", theGame);
-            startActivity(intent);
+                    SharedPreferences sharedpreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                    Gson gson = new Gson();
+                    String json = gson.toJson(theGame);
+                    Set<String> games = new HashSet<String>(sharedpreferences.getStringSet("games", new HashSet<String>()));
+                    games.add(json);
+                    sharedpreferences.edit().putStringSet("games", games).apply();
+                    //Game theFirstGame = gson.fromJson(games.iterator().next(), Game.class);
+                    //theFirstGame.getRounds();
+
+                    Intent intent = new Intent(this, Activity_Game.class);
+                    intent.putExtra("theGame", theGame);
+                    startActivity(intent);
+                    break;
+            }
         }
     }
 }

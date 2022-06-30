@@ -13,7 +13,12 @@ public class PlayerRound implements Serializable {
     }
 
     public void setBet(int bet) {
+
         this.bet = bet;
+
+        if (isDoneLoaded()){
+            setDoneLoaded(false);
+        }
     }
 
     public int getDone() {
@@ -39,4 +44,5 @@ public class PlayerRound implements Serializable {
     public void setDoneLoaded(boolean doneLoaded) {
         this.doneLoaded = doneLoaded;
     }
+
 }

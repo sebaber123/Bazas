@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".gameSettings.Fragment_Players">
+    tools:context=".gameSettings.Fragment_Players"
+    android:background="@color/background_color">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -14,8 +15,9 @@
             android:id="@+id/decks_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="5dp"
-            android:layout_above="@id/linearLayout1"/>
+            android:layout_above="@id/linearLayout1"
+            android:divider="@android:color/holo_blue_light"
+            android:dividerHeight="1dp"/>
 
 
         <LinearLayout

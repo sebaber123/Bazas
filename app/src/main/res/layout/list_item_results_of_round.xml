@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/background_color">
+    android:layout_height="61dp"
+    android:layout_below="@+id/result_spinner">
 
     <TextView
-        android:id="@+id/player_name"
-        android:layout_width="wrap_content"
+        android:id="@+id/player_name_text"
+        android:layout_width="140dp"
         android:layout_height="60dp"
-        android:textSize="22dp"
+        android:textSize="18dp"
         android:text="Jugador"
         android:textColor="@color/black"
-        android:gravity="center"
+        android:gravity="center_vertical"
         android:layout_marginLeft="10dp" />
 
     <View
-        android:id="@+id/divider1"
+        android:id="@+id/divider0"
         android:layout_width="1dp"
         android:layout_marginRight="240dp"
         android:layout_alignParentRight="true"
@@ -23,11 +24,30 @@
         android:background="@android:color/holo_blue_light" />
 
     <TextView
-        android:id="@+id/points_done_text"
-        android:layout_width="80dp"
+        android:id="@+id/bet_text"
+        android:layout_width="60dp"
         android:layout_height="60dp"
-        android:textSize="22dp"
-        android:text="Puntos"
+        android:textSize="18dp"
+        android:text="Apostó"
+        android:textColor="@color/black"
+        android:layout_toLeftOf="@id/divider1"
+        android:gravity="center"
+        />
+
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="1dp"
+        android:layout_marginRight="180dp"
+        android:layout_alignParentRight="true"
+        android:layout_height="60dp"
+        android:background="@android:color/holo_blue_light" />
+
+    <TextView
+        android:id="@+id/done_text"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:textSize="18dp"
+        android:text="Hizo"
         android:textColor="@color/black"
         android:layout_toLeftOf="@id/divider4"
         android:gravity="center"
@@ -37,15 +57,16 @@
         android:id="@+id/divider4"
         android:layout_width="1dp"
         android:layout_height="60dp"
-        android:layout_marginRight="160dp"
+        android:layout_marginRight="120dp"
         android:layout_alignParentRight="true"
         android:background="@android:color/holo_blue_light" />
 
     <TextView
-        android:layout_width="80dp"
+        android:id="@+id/points_of_round_text"
+        android:layout_width="60dp"
         android:layout_height="60dp"
-        android:textSize="22dp"
-        android:text="Bazas hechas"
+        android:textSize="18dp"
+        android:text="Puntos"
         android:textColor="@color/black"
         android:layout_toLeftOf="@id/divider2"
         android:gravity="center"
@@ -55,18 +76,18 @@
         android:id="@+id/divider2"
         android:layout_width="1dp"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="80dp"
+        android:layout_marginRight="60dp"
         android:layout_height="60dp"
         android:background="@android:color/holo_blue_light" />
 
     <TextView
-        android:layout_width="80dp"
+        android:id="@+id/subtotal_points_text"
+        android:layout_width="60dp"
         android:layout_height="60dp"
-        android:textSize="22dp"
-        android:text="Editar"
+        android:textSize="18dp"
+        android:text="Sub-&#10;Total"
         android:textColor="@color/black"
         android:layout_alignParentRight="true"
-
         android:gravity="center"
         />
 
@@ -76,30 +97,6 @@
         android:layout_height="1dp"
         android:layout_below="@+id/player_name"
         android:background="@android:color/holo_blue_light" />
-
-    <ListView
-        android:id="@+id/players_list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/divider3"
-        android:divider="@android:color/holo_blue_light"
-        android:dividerHeight="1dp"
-        android:layout_above="@id/continue_button"
-        android:layout_marginBottom="5dp"
-        />
-
-    <Button
-        android:id="@+id/continue_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Finalizar Carga"
-        android:layout_marginRight="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginBottom="5dp"
-        android:layout_alignParentBottom="true"
-        android:enabled="false"
-        />
-
 
 
 </RelativeLayout>

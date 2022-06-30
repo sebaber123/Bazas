@@ -15,7 +15,7 @@
 
         <TextView
             android:id="@+id/settings"
-            android:text="Agregue los jugadores en el orden que quiera jugar"
+            android:text="Configure las reglas del juego"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:textSize="30dp"

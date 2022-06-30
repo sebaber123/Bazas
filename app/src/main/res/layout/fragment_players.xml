@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".gameSettings.Fragment_Players">
+    tools:context=".gameSettings.Fragment_Players"
+    android:background="@color/background_color">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -33,21 +34,43 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/nombre"
-            android:layout_marginLeft="5dp"
-            android:layout_above="@+id/continue_button"
-            android:layout_marginBottom="5dp"/>
+            android:layout_above="@+id/linearLayout1"
+            android:layout_marginBottom="5dp"
+            android:divider="@android:color/holo_blue_light"
+            android:dividerHeight="1dp"/>
 
-        <Button
-            android:id="@+id/continue_button"
+        <LinearLayout
+            android:id="@+id/linearLayout1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginLeft="5dp"
-            android:text="continuar"
-            android:enabled="false"
-            />
+            android:padding="6dp"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/back_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="volver"
+                android:backgroundTint="@color/red"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1"
+                />
+            <Button
+                android:id="@+id/continue_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="continuar"
+                android:layout_marginLeft="2dp"
+                android:layout_weight="1"
+                android:enabled="false"
+                />
+
+        </LinearLayout>
 
 
     </RelativeLayout>

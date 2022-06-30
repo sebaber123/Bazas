@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".gameSettings.Fragment_Settings"
+    android:background="@color/background_color">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/linearLayout1"
+        android:layout_marginBottom="-150dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/points_if_done"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@id/divider1"
+                android:layout_alignParentLeft="true"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:text="Puntos por cumplir la apuesta:"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/points_if_done_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/divider2"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="-20dp"
+                android:layout_toRightOf="@+id/divider1"
+                android:gravity="center"
+                android:text="10"
+                android:textColor="@color/black"
+                android:textSize="40dp" />
+
+            <Button
+                android:id="@+id/edit_points_if_done"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/points_if_done"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="15dp"
+                android:text="Editar" />
+
+            <View
+                android:id="@+id/divider1"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/divider2"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="300dp"
+                android:layout_marginBottom="-20dp"
+                android:background="@android:color/holo_blue_light" />
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/edit_points_if_done"
+                android:layout_marginTop="15dp"
+                android:background="@android:color/holo_blue_light" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/points_per_bet_if_done"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/divider2"
+                android:layout_alignRight="@id/divider3"
+                android:layout_alignParentLeft="true"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:text="Puntos por baza cuando cumple la apuesta:"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/points_per_bet_if_done_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/divider4"
+                android:layout_below="@id/divider2"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="-20dp"
+                android:layout_toRightOf="@+id/divider3"
+                android:gravity="center"
+                android:text="3"
+                android:textColor="@color/black"
+                android:textSize="40dp" />
+
+            <Button
+                android:id="@+id/edit_points_per_bet_if_done"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/points_per_bet_if_done"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="15dp"
+                android:text="Editar" />
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/divider4"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="300dp"
+                android:layout_marginBottom="-20dp"
+                android:background="@android:color/holo_blue_light" />
+
+            <View
+                android:id="@+id/divider4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/edit_points_per_bet_if_done"
+                android:layout_marginTop="15dp"
+                android:background="@android:color/holo_blue_light" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/points_per_bet_if_not_done"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/divider4"
+                android:layout_alignRight="@id/divider5"
+                android:layout_alignParentLeft="true"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:text="Puntos por baza cuando no cumple la apuesta:"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/points_per_bet_if_not_done_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/divider6"
+                android:layout_below="@id/divider4"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="-20dp"
+                android:layout_toRightOf="@+id/divider5"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="@color/black"
+                android:textSize="40dp" />
+
+            <Button
+                android:id="@+id/edit_points_per_bet_if_not_done"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/points_per_bet_if_not_done"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="15dp"
+                android:text="Editar" />
+
+            <View
+                android:id="@+id/divider5"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/divider6"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="300dp"
+                android:layout_marginBottom="-20dp"
+                android:background="@android:color/holo_blue_light" />
+
+            <View
+                android:id="@+id/divider6"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/edit_points_per_bet_if_not_done"
+                android:layout_marginTop="15dp"
+                android:background="@android:color/holo_blue_light" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/bet_0_limit"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/divider6"
+                android:layout_alignRight="@id/divider7"
+                android:layout_alignParentLeft="true"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_centerHorizontal="true"
+                android:text="Limite de veces para apostar 0 seguidas?\n (0 es ilimitado)"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+
+            <TextView
+                android:id="@+id/bet_0_limit_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/divider8"
+                android:layout_below="@id/divider6"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="-20dp"
+                android:layout_toRightOf="@+id/divider7"
+                android:gravity="center"
+                android:text="3"
+                android:textColor="@color/black"
+                android:textSize="40dp" />
+
+            <Button
+                android:id="@+id/edit_bet_0_limit"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bet_0_limit"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="15dp"
+                android:text="Editar" />
+
+            <View
+                android:id="@+id/divider7"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/divider8"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="300dp"
+                android:layout_marginBottom="-20dp"
+                android:background="@android:color/holo_blue_light" />
+
+            <View
+                android:id="@+id/divider8"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/edit_bet_0_limit"
+                android:layout_marginTop="15dp"
+                android:background="@android:color/holo_blue_light" />
+
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_alignParentBottom="true"
+        android:padding="6dp"
+        android:weightSum="2"
+        android:layout_marginTop="5dp">
+
+        <Button
+            android:id="@+id/back_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="volver"
+            android:layout_marginRight="2dp"
+            android:backgroundTint="@color/red"
+            android:layout_weight="1"
+            />
+        <Button
+            android:id="@+id/continue_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="continuar"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="1"
+            />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

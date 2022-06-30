@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 public class Player implements Serializable {
     private String name;
-    private int total_points;
     private ArrayList<PlayerRound> playerRounds = new ArrayList<PlayerRound>();
 
     public Player(String name) {
@@ -22,14 +21,6 @@ public class Player implements Serializable {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public int getTotal_points() {
-        return total_points;
-    }
-
-    public void setTotal_points(int total_points) {
-        this.total_points = total_points;
     }
 
     public ArrayList<PlayerRound> getPlayerRounds() {
@@ -55,8 +46,40 @@ public class Player implements Serializable {
             }
         }
 
-
         return booleanToReturn;
 
     }
+
+    public int getTotalPointsToRound(int pointsPerDone, int pointsIfDone, int pointsPerDoneIfNotAchiveTheBet, int totalRounds){
+
+        int total = 0;
+
+        for (int i = 0; i < totalRounds; i++) {
+
+            if(playerRounds.get(i).isDoneLoaded()){
+                if (playerRounds.get(i).getBet()==playerRounds.get(i).getDone()){
+                    total +=  (pointsIfDone + playerRounds.get(i).getBet() * pointsPerDone);
+                }else{
+                    total += (playerRounds.get(i).getDone() * pointsPerDoneIfNotAchiveTheBet);
+                }
+            }
+        }
+
+        return total;
+    }
+
+    public int hasMorePointsThan(Player player2, int pointsPerDone, int pointsIfDone, int pointsPerDoneIfNotAchiveTheBet) {
+
+        int valueToReturn = 0;
+
+        if (getTotalPointsToRound(pointsPerDone, pointsIfDone, pointsPerDoneIfNotAchiveTheBet, getPlayerRounds().size()) >= player2.getTotalPointsToRound(pointsPerDone, pointsIfDone, pointsPerDoneIfNotAchiveTheBet, getPlayerRounds().size())){
+            valueToReturn = -1;
+        }else{
+            valueToReturn = 1;
+        }
+
+        return valueToReturn;
+
+    }
+
 }

@@ -5,17 +5,13 @@ import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
-import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.bazas.FragmentWithBackPress;
 import com.example.bazas.R;
 import com.example.bazas.model.Game;
 import com.example.bazas.model.Player;
 import com.example.bazas.model.Round;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -32,7 +28,7 @@ public class Activity_GameSettings extends AppCompatActivity {
 
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.home_fragment, new Fragment_Players())
+                .replace(R.id.home_fragment, new Fragment_Settings())
                 .commit();
         Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.home_fragment);
 
@@ -59,6 +55,11 @@ public class Activity_GameSettings extends AppCompatActivity {
         TextView settings = findViewById(android.R.id.content).getRootView().findViewById(R.id.settings);
         Fragment fragment = null;
         switch (number) {
+            case 0:
+                fragment = new Fragment_Players();
+
+                settings.setText("Agregue los jugadores en el orden que quiera jugar");
+                break;
             case 1:
                 fragment = new Fragment_Select_deck();
 
@@ -91,8 +92,18 @@ public class Activity_GameSettings extends AppCompatActivity {
     public void backPressed(Integer number) {
         TextView settings = findViewById(android.R.id.content).getRootView().findViewById(R.id.settings);
         switch (number){
-            case 1:
+            case 0:
+                Intent intent = new Intent();
+                setResult(1, intent);
                 finish();
+                break;
+            case 1:
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.home_fragment, new Fragment_Settings(),null)
+                        .commit();
+
+                settings.setText("Configure las reglas del juego");
                 break;
             case 2:
                 getSupportFragmentManager()

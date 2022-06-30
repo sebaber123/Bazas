@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.bazas.FragmentWithBackPress;
 import com.example.bazas.R;
 import com.example.bazas.gameSettings.Adapters.Adapter_AddPlayers;
 import com.example.bazas.model.Player;
@@ -40,14 +41,7 @@ public class Fragment_Players extends Fragment implements FragmentWithBackPress 
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Players.
-     */
+
     // TODO: Rename and change types and number of parameters
     public static Fragment_Players newInstance(String param1, String param2) {
         Fragment_Players fragment = new Fragment_Players();
@@ -112,6 +106,14 @@ public class Fragment_Players extends Fragment implements FragmentWithBackPress 
         }else{
             continueButton.setEnabled(false);
         }
+
+        Button backButton = view.findViewById(R.id.back_button);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((Activity_GameSettings)getActivity()).backPressed(1);
+            }
+        });
 
         return view;
     }

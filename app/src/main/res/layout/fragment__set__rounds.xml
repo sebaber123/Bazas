@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".gameSettings.Fragment_Set_Rounds">
+    tools:context=".gameSettings.Fragment_Set_Rounds"
+    android:background="@color/background_color">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -106,7 +107,7 @@
                 android:layout_width="match_parent"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="46dp"
-                android:background="@android:color/darker_gray" />
+                android:background="@android:color/holo_blue_light" />
 
 
         </RelativeLayout>
@@ -117,7 +118,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/table_top"
-            android:layout_above="@id/linearLayout_set_rounds_buttons"/>
+            android:layout_above="@id/linearLayout_set_rounds_buttons"
+            android:divider="@android:color/holo_blue_light"
+            android:dividerHeight="1dp"/>
 
 
         <LinearLayout

@@ -1,4 +1,4 @@
-package com.example.bazas.gameSettings;
+package com.example.bazas;
 
 public interface FragmentWithBackPress {
     public void onBackPressed();

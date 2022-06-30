@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.bazas.FragmentWithBackPress;
 import com.example.bazas.R;
 import com.example.bazas.gameSettings.Activity_GameSettings;
 import com.example.bazas.gameSettings.Adapters.Adapter_SetRounds;
@@ -23,7 +24,7 @@ import org.w3c.dom.Text;
  * Use the {@link Fragment_Round#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Fragment_Round extends Fragment {
+public class Fragment_Round extends Fragment implements FragmentWithBackPress {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -101,19 +102,50 @@ public class Fragment_Round extends Fragment {
             }
         });
 
-        checkButtons(addDonesButton);
+        Button finishRoundButton = view.findViewById(R.id.continue_button);
+        finishRoundButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                ((Activity_Game)getActivity()).nextRound();
+            }
+        });
+
+        checkButtons(addDonesButton, finishRoundButton);
+
+        Button resultButton = view.findViewById(R.id.results_button);
+        resultButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((Activity_Game)getActivity()).continueButton("results");
+
+            }
+        });
+
+
+
+
 
 
         return view;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    private void checkButtons(Button addDonesButton) {
+    private void checkButtons(Button addDonesButton, Button finishRoundButton) {
         if (((Activity_Game)getActivity()).getTheGame().allBetsLoaded()){
             addDonesButton.setEnabled(true);
         } else {
             addDonesButton.setEnabled(false);
         }
+        if (((Activity_Game)getActivity()).getTheGame().allDonesLoaded()){
+            finishRoundButton.setEnabled(true);
+        } else {
+            finishRoundButton.setEnabled(false);
+        }
     }
 
+    @Override
+    public void onBackPressed() {
+        ((Activity_Game)getActivity()).backButton("round");
+    }
 }

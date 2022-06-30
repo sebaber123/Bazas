@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:layout_below="@+id/result_spinner">
+
+
+    <TextView
+        android:id="@+id/player_position_text"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:textSize="22dp"
+        android:text="Pos"
+        android:textColor="@color/black"
+        android:gravity="center" />
+
+    <View
+        android:id="@+id/divider5"
+        android:layout_width="1dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="60dp"
+        android:background="@android:color/holo_blue_light" />
+
+    <TextView
+        android:id="@+id/player_name_text"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:textSize="22dp"
+        android:text="Jugador"
+        android:textColor="@color/black"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/player_position_text"
+        />
+
+
+    <View
+        android:id="@+id/divider6"
+        android:layout_width="1dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="60dp"
+        android:layout_height="60dp"
+        android:background="@android:color/holo_blue_light" />
+
+    <TextView
+        android:id="@+id/total_text"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:textSize="20dp"
+        android:text="Total"
+        android:textColor="@color/black"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        />
+
+</RelativeLayout>
