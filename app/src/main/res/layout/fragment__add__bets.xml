@@ -8,11 +8,11 @@
         android:id="@+id/player_name"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:textSize="22dp"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
         android:text="Jugador"
         android:textColor="@color/black"
-        android:gravity="center"
-        android:layout_marginLeft="10dp" />
+        android:textSize="22dp" />
 
     <View
         android:id="@+id/divider1"
@@ -62,24 +62,23 @@
         android:id="@+id/players_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/divider3"
-        android:divider="@android:color/holo_blue_light"
-        android:dividerHeight="1dp"
         android:layout_above="@id/continue_button"
+        android:layout_below="@id/divider3"
         android:layout_marginBottom="5dp"
-        />
+        android:divider="@android:color/holo_blue_light"
+        android:dividerHeight="1dp" />
 
     <Button
         android:id="@+id/continue_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Finalizar Apuestas"
-        android:layout_marginRight="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginBottom="5dp"
         android:layout_alignParentBottom="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
         android:enabled="false"
-        />
+        android:backgroundTint="@color/teal_200"
+        android:text="Finalizar Apuestas" />
 
 
 

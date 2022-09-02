@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.bazas.FragmentWithBackPress;
@@ -18,40 +19,18 @@ import com.example.bazas.R;
 import com.example.bazas.game.adapters.Adapter_Add_Bets;
 import com.example.bazas.game.adapters.Adapter_Add_Dones;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Fragment_Add_Dones#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class Fragment_Add_Dones extends Fragment implements FragmentWithBackPress {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     public Fragment_Add_Dones() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Fragment_Add_Dones.
-     */
-    // TODO: Rename and change types and number of parameters
+
     public static Fragment_Add_Dones newInstance(String param1, String param2) {
         Fragment_Add_Dones fragment = new Fragment_Add_Dones();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+
         fragment.setArguments(args);
         return fragment;
     }
@@ -60,11 +39,11 @@ public class Fragment_Add_Dones extends Fragment implements FragmentWithBackPres
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+
         }
     }
 
+    //construct the view
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -72,12 +51,12 @@ public class Fragment_Add_Dones extends Fragment implements FragmentWithBackPres
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment__add__dones, container, false);
 
+        //set the adapter of the listView
         ListView listview = (ListView) view.findViewById(R.id.players_list);
         listview.setAdapter(new Adapter_Add_Dones(this, ((Activity_Game)getActivity()).getTheGame().getPlayers()));
 
-
+        //check if the "continue" button must be enable or not
         Button finishDones = view.findViewById(R.id.continue_button);
-
         if(((Activity_Game)getActivity()).getTheGame().allDonesLoaded()){
 
             finishDones.setEnabled(true);
@@ -87,6 +66,7 @@ public class Fragment_Add_Dones extends Fragment implements FragmentWithBackPres
             finishDones.setEnabled(false);
         }
 
+        //set the "continue" button behavior
         finishDones.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -95,10 +75,14 @@ public class Fragment_Add_Dones extends Fragment implements FragmentWithBackPres
             }
         });
 
+        TextView missing_text = view.findViewById(R.id.missing_text);
+        missing_text.setText("Faltan cargar "+ String.valueOf(((Activity_Game)getActivity()).getTheGame().missingDones()) + " bazas");
+
 
         return view;
     }
 
+    //check if all the dones are loaded to set the enable status of the "continue" button
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void checkContinueButton() {
         Button finishDones = getView().findViewById(R.id.continue_button);
@@ -114,8 +98,28 @@ public class Fragment_Add_Dones extends Fragment implements FragmentWithBackPres
 
     }
 
+    //behavior of "back" button
     @Override
     public void onBackPressed() {
         ((Activity_Game)getActivity()).backButton("no round");
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public void updateMissingText() {
+
+        int missingDones = ((Activity_Game)getActivity()).getTheGame().missingDones();
+        TextView missing_text = getView().findViewById(R.id.missing_text);
+
+        if (missingDones != 0) {
+
+            missing_text.setText("Faltan cargar " + String.valueOf(missingDones) + " bazas");
+        }
+        else{
+
+            missing_text.setText("Bazas cargadas con éxito");
+
+
+        }
+
     }
 }

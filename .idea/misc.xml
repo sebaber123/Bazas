@@ -1,6 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/drawable-anydpi/ic_item_result.xml" value="0.156" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2225" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/drawable/rounded_20_corners_teal_200_background.xml" value="0.156" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/drawable/rounded_50_corners_teal_200_background.xml" value="0.156" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/drawable/rounded_5_corners_teal_200_background.xml" value="0.156" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/drawable/rounded_corners_card_number.xml" value="0.1965" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/drawable/rounded_corners_green_background.xml" value="0.1965" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/drawable/rounded_corners_item_load_game.xml" value="0.2225" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/drawable/rounded_corners_item_result_spinner.xml" value="0.1965" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/drawable/rounded_corners_red_background.xml" value="0.1965" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/drawable/rounded_corners_teal_200_background.xml" value="0.1965" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/layout/activity__game.xml" value="0.24547101449275363" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/layout/activity_game_settings.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/layout/activity_load_game.xml" value="0.17844202898550723" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/layout/dialog_last_bet_removed.xml" value="0.17844202898550723" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/layout/dialog_return_to_main_menu.xml" value="0.2" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/layout/fragment__add__bets.xml" value="0.264" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/layout/fragment__add__dones.xml" value="0.17844202898550723" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/layout/fragment__finished__game.xml" value="0.17844202898550723" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/layout/fragment__results.xml" value="0.159375" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/layout/fragment__round.xml" value="0.264" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/layout/fragment__score.xml" value="0.2" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/layout/fragment__select_deck.xml" value="0.17844202898550723" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/layout/fragment__set__rounds.xml" value="0.17844202898550723" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/layout/fragment__settings.xml" value="0.17844202898550723" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/layout/fragment_item.xml" value="0.4" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/layout/fragment_item_list.xml" value="0.2" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/layout/fragment_players.xml" value="0.17844202898550723" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/layout/list_item_add_bets.xml" value="0.17844202898550723" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/layout/list_item_add_dones.xml" value="0.17844202898550723" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/layout/list_item_add_players.xml" value="0.17844202898550723" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/layout/list_item_load_game.xml" value="0.2" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/layout/list_item_results_of_round.xml" value="0.17844202898550723" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/layout/list_item_results_spinner.xml" value="0.17844202898550723" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/layout/list_item_select_deck.xml" value="0.17844202898550723" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/layout/list_item_set_rounds.xml" value="0.17844202898550723" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/layout/list_item_total_results.xml" value="0.17844202898550723" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/layout/number_picker_dialog_add_bets.xml" value="0.17844202898550723" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/layout/number_picker_dialog_add_dones.xml" value="0.17844202898550723" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/layout/number_picker_dialog_add_round.xml" value="0.17844202898550723" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/layout/number_picker_dialog_generate_rounds.xml" value="0.17844202898550723" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/layout/number_picker_dialog_settings.xml" value="0.17844202898550723" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.156" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/mipmap-anydpi-v26/ic_launcher_bazas.xml" value="0.124" />
+        <entry key="..\:/Users/sebas/StudioProjects/Bazas/app/src/main/res/mipmap-anydpi-v26/ic_launcher_bazas_round.xml" value="0.124" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

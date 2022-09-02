@@ -28,40 +28,42 @@
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_below="@+id/numberPicker"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-        android:layout_toRightOf="@+id/numberPicker"
-        android:layout_marginLeft="25dp"
         android:layout_marginRight="10dp"
-        android:width="110dp"
+        android:layout_toRightOf="@+id/numberPicker"
+        android:width="120dp"
+        android:backgroundTint="@color/teal_200"
         android:text="Siguiente"
-        android:textSize="12dp" />
+        android:textSize="11dp" />
 
 
     <Button
         android:id="@+id/button_edit_bet"
-        android:textSize="12dp"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_below="@+id/numberPicker"
+        android:layout_marginLeft="-10dp"
         android:layout_marginTop="20dp"
         android:layout_toRightOf="@id/button_cancel"
-        android:layout_marginLeft="-15dp"
-        android:width="110dp"
-        android:text="Editar" />
-
+        android:width="100dp"
+        android:backgroundTint="@color/teal_200"
+        android:text="Editar"
+        android:textSize="11dp" />
 
 
     <Button
         android:id="@+id/button_cancel"
-        android:textSize="12dp"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_below="@+id/numberPicker"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="25dp"
         android:layout_marginLeft="10dp"
-        android:width="110dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
         android:layout_toLeftOf="@+id/numberPicker"
-        android:text="Cancelar" />
+        android:width="120dp"
+        android:backgroundTint="@color/red"
+        android:text="Cancelar"
+        android:textSize="11dp" />
 
 </RelativeLayout>

@@ -3,14 +3,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="16dp"
-    android:paddingRight="16dp" >
+    android:paddingRight="16dp"
+    android:background="@color/background_color">
 
     <Button
-        android:id="@+id/iniciarPartida"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:text="Iniciar Partida"
+        android:id="@+id/startGame"
+        android:layout_width="300dp"
+        android:layout_height="185dp"
         android:layout_centerHorizontal="true"
-        android:onClick="iniciarPartida"/>
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_50_corners_teal_200_background"
+        android:onClick="startGame"
+        android:text="Iniciar Partida"
+        android:textSize="40dp" />
+
+    <Button
+        android:id="@+id/loadGame"
+        android:layout_width="300dp"
+        android:layout_height="185dp"
+        android:layout_below="@+id/startGame"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_50_corners_teal_200_background"
+        android:onClick="loadGame"
+        android:text="Cargar Partida"
+        android:textSize="40dp" />
+
+    <ImageView
+        android:id="@+id/deck"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/background_menu" />
+
 
 </RelativeLayout>

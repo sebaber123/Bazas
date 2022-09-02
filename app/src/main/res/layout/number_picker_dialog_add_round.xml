@@ -28,25 +28,26 @@
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_below="@+id/numberPicker"
+        android:layout_marginLeft="-10dp"
         android:layout_marginTop="20dp"
         android:layout_toRightOf="@+id/numberPicker"
-        android:layout_marginLeft="-10dp"
         android:width="145dp"
         android:text="Agregar ronda"
+        android:backgroundTint="@color/teal_200"
         android:textSize="12dp" />
-
 
 
     <Button
         android:id="@+id/button_cancel"
-        android:textSize="12dp"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_below="@+id/numberPicker"
         android:layout_marginTop="20dp"
         android:layout_marginRight="-10dp"
-        android:width="145dp"
         android:layout_toLeftOf="@+id/numberPicker"
-        android:text="Cancelar" />
+        android:width="145dp"
+        android:text="Cancelar"
+        android:backgroundTint="@color/red"
+        android:textSize="12dp" />
 
 </RelativeLayout>

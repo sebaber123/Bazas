@@ -8,10 +8,12 @@ public class PlayerRound implements Serializable {
     private boolean betLoaded = false;
     private boolean doneLoaded = false;
 
+    //getter
     public int getBet() {
         return bet;
     }
 
+    //setter
     public void setBet(int bet) {
 
         this.bet = bet;
@@ -21,26 +23,32 @@ public class PlayerRound implements Serializable {
         }
     }
 
+    //getter
     public int getDone() {
         return done;
     }
 
+    //setter
     public void setDone(int done) {
         this.done = done;
     }
 
+    //getter
     public boolean isLoaded() {
         return betLoaded;
     }
 
+    //setter
     public void setLoaded(boolean loaded) {
         this.betLoaded = loaded;
     }
 
+    //getter
     public boolean isDoneLoaded() {
         return doneLoaded;
     }
 
+    //setter
     public void setDoneLoaded(boolean doneLoaded) {
         this.doneLoaded = doneLoaded;
     }

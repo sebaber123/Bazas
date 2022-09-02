@@ -7,11 +7,11 @@
         android:id="@+id/player_name"
         android:layout_width="170dp"
         android:layout_height="60dp"
-        android:textSize="18dp"
+        android:layout_marginLeft="10dp"
+        android:gravity="center_vertical"
         android:text="PlayerName"
         android:textColor="@color/black"
-        android:gravity="center_vertical"
-        android:layout_marginLeft="10dp"
+        android:textSize="18dp"
         android:textStyle="bold" />
 
     <View

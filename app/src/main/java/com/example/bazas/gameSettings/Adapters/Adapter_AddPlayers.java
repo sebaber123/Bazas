@@ -50,6 +50,7 @@ public class Adapter_AddPlayers extends BaseAdapter implements ListAdapter {
         //just return 0 if your list items do not have an Id variable.
     }
 
+    //construct the view
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
@@ -66,26 +67,47 @@ public class Adapter_AddPlayers extends BaseAdapter implements ListAdapter {
         //Handle buttons and add onClickListeners
         ImageButton deletebtn= (ImageButton) view.findViewById(R.id.delete);
 
-
+        //delete button on click behaviour
         deletebtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+
+                //construct a confirmation dialog
                 AlertDialog.Builder builder = new AlertDialog.Builder(context.getActivity(), R.style.alertDialogStyle);
+
+                //set title of the dialog
                 builder.setTitle("Confirmacion");
+
+                //set dialog text
                 builder.setMessage("Seguro que quiere borrar al jugador?");
+
+                //delete button of the dialog behaviour
                 builder.setPositiveButton("Borrar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+
+                        //delete the player from the list of players of the game
                         context.deletePlayer(list.get(position));
+
+                        //check if the game could advance to the next configuration stage
                         context.checkContinueButton();
+
+                        //generate a toast text
                         Toast toast = Toast.makeText(context.getActivity().getApplicationContext(), "Jugador eliminado con exito", Toast.LENGTH_SHORT);
                         toast.show();
+
+                        //update the view
                         notifyDataSetChanged();
                     }
                 });
+
+                //behaviour of the cancel button
                 builder.setNegativeButton("Cancelar", null);
 
+                //create the dialog
                 AlertDialog dialog = builder.create();
+
+                //show the dialog
                 dialog.show();
 
 
@@ -95,6 +117,7 @@ public class Adapter_AddPlayers extends BaseAdapter implements ListAdapter {
         return view;
     }
 
+    //update the view
     public void update(){
         notifyDataSetChanged();
     }

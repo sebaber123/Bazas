@@ -1,6 +1,5 @@
 package com.example.bazas.game.adapters;
 
-import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Build;
@@ -20,7 +19,6 @@ import androidx.annotation.RequiresApi;
 
 import com.example.bazas.R;
 import com.example.bazas.game.Activity_Game;
-import com.example.bazas.game.Fragment_Add_Bets;
 import com.example.bazas.game.Fragment_Add_Dones;
 import com.example.bazas.model.Player;
 import com.example.bazas.model.PlayerRound;
@@ -54,20 +52,27 @@ public class Adapter_Add_Dones extends BaseAdapter implements ListAdapter {
         //just return 0 if your list items do not have an Id variable.
     }
 
+    //construct the view
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
+
         View view = null;
+
         if (view == null) {
             LayoutInflater inflater = (LayoutInflater) context.getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(R.layout.list_item_add_dones, null);
         }
 
+        //set player name text
         TextView playerName = view.findViewById(R.id.player_name);
         playerName.setText(getPlayerByPosition(position).getName());
 
+        //get player points done text
         TextView playerPointsDone= view.findViewById(R.id.points_done_text);
         TextView playerDones= view.findViewById(R.id.dones_text);
+
+        //set the amount of points if the done is loaded unless set "-"
         if (getPlayerRoundByPosition(position).isDoneLoaded()){
             playerDones.setText(String.valueOf(getPlayerRoundByPosition(position).getDone()));
             playerPointsDone.setText(String.valueOf(((Activity_Game)context.getActivity()).getTheGame().calculatePoints(getPlayerRoundByPosition(position).getBet(), getPlayerRoundByPosition(position).getDone())));
@@ -76,10 +81,13 @@ public class Adapter_Add_Dones extends BaseAdapter implements ListAdapter {
             playerPointsDone.setText("-");
         }
 
+        //behavior of the "edit" button
         ImageButton editButton = view.findViewById(R.id.button_edit);
         editButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                //open the number picker dialog
                 openNumberPickerDialog(position);
             }
         });
@@ -90,34 +98,49 @@ public class Adapter_Add_Dones extends BaseAdapter implements ListAdapter {
     @RequiresApi(api = Build.VERSION_CODES.N)
     private void openNumberPickerDialog(int position) {
 
+        //get the quantities that the player could have done
         ArrayList<String> numberThatCanDone = ((Activity_Game)context.getActivity()).getTheGame().getQuantitiesThatCanDoneThePlayer(position);
 
-        if (numberThatCanDone.size()==1){
+        //if the number of dones are equal to the quantity of cards of the round the player must have done 0
+        /*if (numberThatCanDone.size()==1){
             Toast toast = Toast.makeText(((Activity_Game)context.getActivity()).getApplicationContext(), "Solo puede cargar 0. No restan bazas!", Toast.LENGTH_SHORT);
             toast.show();
-        }
+        }*/
 
+        //transform the arrayList to an array
         String[] numberThatCanBetToDisplay = numberThatCanDone.toArray(new String[0]);
 
+        //create the Dialog window
         Dialog d = new Dialog((Activity_Game)context.getActivity());
 
+        //set the layout of the dialog
         d.setContentView(R.layout.number_picker_dialog_add_dones);
 
-        final NumberPicker np = (NumberPicker) d.findViewById(R.id.numberPicker);
-        TextView title = d.findViewById(R.id.text_title);
-        title.setText("Bazas hechas por " + getPlayerByPosition(position).getName() + "\n (Pidio: " + String.valueOf(getPlayerRoundByPosition(position).getBet()) + ")");
 
+
+        //set the title of the dialog
+        TextView title = d.findViewById(R.id.text_title);
+        title.setText("Bazas hechas por " + getPlayerByPosition(position).getName() + "\n (Pidió: " + String.valueOf(getPlayerRoundByPosition(position).getBet()) + ")");
+
+        //create the number picker
+        final NumberPicker np = (NumberPicker) d.findViewById(R.id.numberPicker);
+
+        //set the numbers to display
         np.setDisplayedValues(numberThatCanBetToDisplay);
 
         np.setMaxValue(numberThatCanBetToDisplay.length - 1);
-
         np.setMinValue(0);
 
+        //if the player is editing the quantity of dones set the selected value in the number picker
         if (getPlayerRoundByPosition(position).isDoneLoaded()){
             np.setValue(numberThatCanDone.indexOf(String.valueOf(getPlayerRoundByPosition(position).getDone())));
+
+        //else set the value of 0
         } else{
             np.setValue(0);
         }
+
+        //behaviour of the "cancel" button
         np.setWrapSelectorWheel(false);
         Button cancelButton = (Button) d.findViewById(R.id.button_cancel);
         cancelButton.setOnClickListener(new View.OnClickListener()
@@ -128,42 +151,30 @@ public class Adapter_Add_Dones extends BaseAdapter implements ListAdapter {
             }
         });
 
-
-        Button addRoundsButton = (Button) d.findViewById(R.id.button_edit_done);
-        addRoundsButton.setText("Editar");
-        addRoundsButton.setOnClickListener(new View.OnClickListener()
+        //behaviour of the "edit" button
+        Button editButton = (Button) d.findViewById(R.id.button_edit_done);
+        editButton.setText("Editar");
+        editButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v) {
-                getPlayerRoundByPosition(position).setDone(Integer.valueOf(numberThatCanDone.get(np.getValue())));
-                getPlayerRoundByPosition(position).setDoneLoaded(true);
+                //behavior of the onClick
+                editOrNextDialog(d, position, numberThatCanDone, np  );
 
-                update();
-
-                Toast toast = Toast.makeText(((Activity_Game)context.getActivity()).getApplicationContext(), "Carga realizada con exito", Toast.LENGTH_SHORT);
-                toast.show();
-
-                d.dismiss();
             }
         });
 
-        Button nextBetButton = (Button) d.findViewById(R.id.button_next_done);
+        //behaviour of the "next" button
+        Button nextDoneButton = (Button) d.findViewById(R.id.button_next_done);
         if (position == (((Activity_Game)context.getActivity()).getTheGame().getPlayers().size()-1)){
-            nextBetButton.setEnabled(false);
+            nextDoneButton.setEnabled(false);
         }
-        nextBetButton.setOnClickListener(new View.OnClickListener()
+        nextDoneButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v) {
-                getPlayerRoundByPosition(position).setDone(Integer.valueOf(numberThatCanDone.get(np.getValue())));
-                getPlayerRoundByPosition(position).setDoneLoaded(true);
-
-                update();
-
-                Toast toast = Toast.makeText(((Activity_Game)context.getActivity()).getApplicationContext(), "Carga realizada con exito", Toast.LENGTH_SHORT);
-                toast.show();
-
-                d.dismiss();
+                //behavior of the onClick
+                editOrNextDialog(d, position, numberThatCanDone, np  );
                 openNumberPickerDialog(position+1);
             }
         });
@@ -176,19 +187,42 @@ public class Adapter_Add_Dones extends BaseAdapter implements ListAdapter {
     }
 
 
-
+    //get a Player by the position of the round
     private Player getPlayerByPosition(int position){
-        return list.get(((Activity_Game)context.getActivity()).getTheGame().playerOfPositionOnActualRound(position));
+        return list.get(((Activity_Game)context.getActivity()).getTheGame().getPositionOfPlayerOnActualRound(position));
     }
 
+    //get a PlayerRound by the position of the round
     private PlayerRound getPlayerRoundByPosition(int position){
         return (((Activity_Game)context.getActivity()).getTheGame().getPlayerRoundOfPositionOnActualRound(position));
     }
 
+    //update the view and check if the continue button must be enable or disable
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void update(){
         notifyDataSetChanged();
         context.checkContinueButton();
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public void editOrNextDialog(Dialog d, int position, ArrayList<String> numberThatCanDone, NumberPicker np  ){
+
+        int quantity = Integer.valueOf(numberThatCanDone.get(np.getValue()));
+
+        //set the values selected to the PlayerRound
+        getPlayerRoundByPosition(position).setDone(quantity);
+        getPlayerRoundByPosition(position).setDoneLoaded(true);
+
+        context.updateMissingText();
+
+        //update the view
+        update();
+
+        //create a toast message
+        Toast toast = Toast.makeText(((Activity_Game)context.getActivity()).getApplicationContext(), "Carga realizada con exito", Toast.LENGTH_SHORT);
+        toast.show();
+
+        //close the dialog
+        d.dismiss();
+    }
 }
